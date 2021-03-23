@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hoy-en-laredo';
+
+  constructor(private http: HttpClient){}
+
+  ngOnInit()
+  {
+    this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
+        alert(JSON.stringify(data))
+    })    
+  }
 }
