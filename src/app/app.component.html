@@ -1,11 +1,11 @@
 
-<router-outlet></router-outlet>
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     Bootstrap
   </a>
 </nav>
+<!--
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -31,4 +31,23 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+-->
+<!--<router-outlet></router-outlet>-->
+<div class = "container">
+  <div class = "row">
+      <div class = "col-xl-6 mt-3" *ngFor = "let oferta of ofertas; let i = index">
+        <div class="card">
+          <div class="card-header">
+            {{oferta.empresa}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{oferta.puesto}}</h5>
+            <p class="card-text">{{oferta.descripcion}}</p>
+            <p class = "card-text">Categoria: {{oferta.categoria}} - Salario: ${{oferta.salario}}</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>

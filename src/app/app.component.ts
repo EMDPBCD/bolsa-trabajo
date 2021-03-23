@@ -8,13 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'hoy-en-laredo';
-
+  ofertas: any[];
   constructor(private http: HttpClient){}
 
   ngOnInit()
   {
-    this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular').subscribe(data => {
-        alert(JSON.stringify(data))
+    this.ofertas = new Array;
+    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/bolsa-de-trabajo/Tecnologia').subscribe(data => {
+        for(let i = 0; i < data.length; i++)
+        {
+          this.ofertas.push(data[i]);
+        }
+        console.log(this.ofertas);
     })    
+    
   }
 }
