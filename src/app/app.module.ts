@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BolsaTrabajoComponent } from './Componentes/bolsa-trabajo/bolsa-trabajo.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { BolsaTrabajoComponent } from './Componentes/bolsa-trabajo/bolsa-trabajo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
