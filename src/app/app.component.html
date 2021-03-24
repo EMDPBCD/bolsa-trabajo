@@ -64,13 +64,10 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="input-group rounded">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Seleccionar categoria...</option>
-                            <option value="1">Transporte</option>
-                            <option value="2">Sistemas</option>
-                            <option value="3">Capturador</option>
-                          </select>
-                          <button class="btn btn" id="boton">Buscar</button>
+                        <select class="form-select" id="categoriaSeleccionada" [(ngModel)]="categoriaSeleccionada">
+                            <option *ngFor = "let categoria of categorias" value="{{categoria.categoria_nombre}}">{{categoria.categoria_nombre}}</option>
+                        </select>
+                        <button class="btn btn" id="boton" (click)="buscarOfertas()">Buscar</button>
                       </div>
                  </div>
                 </div>
