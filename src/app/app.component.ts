@@ -28,7 +28,6 @@ export class AppComponent {
         {
           this.ofertas.push(data[i]);
         }
-        console.log(this.ofertas);
     })    
   }
 
@@ -40,7 +39,6 @@ export class AppComponent {
         {
           this.categorias.push(data[i]);
         }
-        alert(JSON.stringify(this.categorias));
     })    
   }
 }
