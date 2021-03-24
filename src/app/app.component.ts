@@ -13,14 +13,17 @@ export class AppComponent {
 
   ngOnInit()
   {
+  }
+
+  buscarOfertas()
+  {
     this.ofertas = new Array;
-    this.http.get<any>('http://ticketstalamas.com/prueba_git/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/Tecnologia').subscribe(data => {
+    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/bolsa-de-trabajo/Transporte').subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.ofertas.push(data[i]);
         }
         console.log(this.ofertas);
     })    
-    
   }
 }
