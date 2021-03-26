@@ -23,7 +23,7 @@ export class AppComponent {
   {
     console.log(this.categoriaSeleccionada);
     this.ofertas = new Array;
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/' + this.categoriaSeleccionada).subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/ofertas/' + this.categoriaSeleccionada).subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.ofertas.push(data[i]);
@@ -34,7 +34,7 @@ export class AppComponent {
   buscarCategorias()
   {
     this.categorias = new Array;
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/categorias-bolsa-de-trabajo').subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/categorias').subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.categorias.push(data[i]);
