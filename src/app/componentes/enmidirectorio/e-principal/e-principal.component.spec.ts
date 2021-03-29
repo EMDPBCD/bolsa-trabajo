@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BolsaTrabajoComponent } from './bolsa-trabajo.component';
+import { EPrincipalComponent } from './e-principal.component';
 
-describe('BolsaTrabajoComponent', () => {
-  let component: BolsaTrabajoComponent;
-  let fixture: ComponentFixture<BolsaTrabajoComponent>;
+describe('EPrincipalComponent', () => {
+  let component: EPrincipalComponent;
+  let fixture: ComponentFixture<EPrincipalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BolsaTrabajoComponent ]
+      declarations: [ EPrincipalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BolsaTrabajoComponent);
+    fixture = TestBed.createComponent(EPrincipalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

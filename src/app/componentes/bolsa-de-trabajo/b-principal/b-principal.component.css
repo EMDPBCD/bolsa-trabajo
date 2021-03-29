@@ -1,0 +1,19 @@
+#cabeceraTarjeta
+{
+    background-color: #1ea6b2;
+    color: white;
+}
+
+#contenedorAcerca
+{
+    
+    box-shadow: 2px 2px 5px 0px #e9e9e9;
+    padding:5px;
+    text-align: justify;
+}
+
+#boton
+{
+    background-color: #ef8c17;
+    color: white;
+}
