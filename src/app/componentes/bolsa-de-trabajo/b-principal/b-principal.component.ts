@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router, NavigationEnd } from '@angular/router'; 
 
 @Component({
   selector: 'app-b-principal',
@@ -13,7 +14,7 @@ export class BPrincipalComponent
   categorias: any[];
   categoriaSeleccionada;
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private router: Router){}
 
   ngOnInit()
   {
@@ -30,6 +31,11 @@ export class BPrincipalComponent
           this.ofertas.push(data[i]);
         }
     })    
+  }
+
+  navegarOfertas()
+  {
+    this.router.navigate(['informacion-oferta']);
   }
 
   buscarCategorias()

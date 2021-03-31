@@ -76,11 +76,11 @@
             <div id="cabeceraTarjeta" class="card-header">
               {{oferta.empresa}}
             </div>
-            <div class="card-body" style="height: 200px;">
+            <div class="card-body" style="height:225px;">
               <h5 class="card-title">{{oferta.puesto}}</h5>
               <p class="card-text">{{oferta.descripcion}}</p>
               <p class = "card-text">Categoria: {{oferta.categoria}} - Salario: ${{oferta.salario}}</p>
-              <a href="#" class="btn btn" id="boton">Ver más</a>
+              <a (click)="navegarOfertas()" class="btn btn" id="boton">Ver más</a>
             </div>
           </div>
         </div>
