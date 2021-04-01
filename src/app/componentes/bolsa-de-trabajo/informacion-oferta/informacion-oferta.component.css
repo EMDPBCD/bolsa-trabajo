@@ -1,0 +1,56 @@
+#cuadroInformacion
+{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    padding: 10px;
+
+}
+
+#tarjetaInformacion
+{
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    
+}
+
+#headcard
+{
+    background-color:#1ea6b2;
+    color: white;
+    font-weight:500;
+    font-size: x-large;
+}
+
+#headcard2
+{
+    background-color:#1ea6b2;
+    color: white;
+    font-weight:500;
+    font-size: x-large;
+}
+
+#puntocard1, #textocard2
+{
+    color: black;
+    font-weight:500;
+    font-size:medium;
+}
+
+li
+{
+    color: black;
+    font-size: small;
+    font-weight: 600;
+}
+
+#Descripcion
+{
+    font-size:x-large;
+}
+
+#Funciones
+{
+    color:black;
+    font-size: large;
+    
+}
