@@ -1,0 +1,24 @@
+
+p
+{
+    font-size: small;
+}
+
+#cabeceraTarjeta
+{
+    background-color: #1ea6b2;
+    color: white;
+
+}
+
+#boton
+{
+    background-color:#ef8c17;
+    color: white;
+}
+
+#cabeceraLista
+{
+    background-color: #1ea6b2;
+    border: #1ea6b2;
+}
