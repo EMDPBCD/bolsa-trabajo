@@ -1,15 +1,9 @@
 
   <div id="sliderEPrincipal" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://tiendatalamas.com/assets/portadacentro.jpg" class="d-block w-100" alt="..."> 
-    </div>
-      <div class="carousel-item">
-        <img src="https://tiendatalamas.com/assets/portadacentro.jpg" class="d-block w-100" alt="..."> 
-    </div>
-      <div class="carousel-item">
-        <img src="https://tiendatalamas.com/assets/portadacentro.jpg" class="d-block w-100" alt="...">   
-    </div>
+    <div class="carousel-inner" >
+      <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let banner  of banners; let esElPrimero = first;">
+          <img src="{{banner.imagen}}" class="d-block w-100"> 
+      </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#sliderEPrincipal" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -35,48 +29,20 @@
     </div>
     <div class="col-7">
         <div id="contenidoPrincipal" class="container">
-
-
             <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                  <div class="card">
-                    <img src="https://whatsupmag.com/downloads/12230/download/restaurant.jpe?cb=d0dc3ba9e7bcde00943f85c0f5dae772" class="card-img-top" alt="...">
+                <div class="col" *ngFor="let item of empresas; let i = index;">
+                  <div class="card" >
+                    <img src="{{item['logotipo']}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Restaurante 1</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                  <!--IMAGENES DE 630*390-->
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="https://whatsupmag.com/downloads/12230/download/restaurant.jpe?cb=d0dc3ba9e7bcde00943f85c0f5dae772" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Restaurante 2</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h5 class="card-title">{{item["nombreEmpresa"]}}</h5>
+                      <p class="card-text">{{item["descripcion"]}}</p>
+                      <div *ngFor = "let sucursal of item['sucursales']">
+                        Sucursal: <p class="card-text">{{sucursal["sucursal"]}} - {{sucursal["correo"]}}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="https://whatsupmag.com/downloads/12230/download/restaurant.jpe?cb=d0dc3ba9e7bcde00943f85c0f5dae772" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Restaurante 3</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="https://whatsupmag.com/downloads/12230/download/restaurant.jpe?cb=d0dc3ba9e7bcde00943f85c0f5dae772" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Restaurante 4</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
        </div>
     </div>
 </div>
-
