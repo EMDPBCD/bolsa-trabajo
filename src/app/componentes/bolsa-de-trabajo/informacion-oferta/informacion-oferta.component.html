@@ -69,35 +69,70 @@
                     <p id="textocard2" class="card-text">{{empresa[0]['empresa_nombre']}}</p>
                  </div>
                  <div class="card-footer d-grid gap-2">
-                  <button class="btn btn-danger" type="button">Postularme</button> 
+                  <button id="botonPostular" class="btn btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Postularme</button> 
                 </div>
                </div>
         </div>
       </div>
+     
+      <div class="row">
+
+        
+        <div class="col-lg-3 col-md-12 col-sm-12">
+          </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12">
+
+          <div class="collapse" id="collapseExample">
+            <div id="cuadroFormulario">
+              <form>
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput">Nombre</label>
+                  <input type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Apellidos</label>
+                  <input type="text" class="form-control" id="Apellidos" placeholder="Ej: Moreno Rodriguez">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Dirección</label>
+                  <input type="text" class="form-control" id="Direccion" placeholder="Ej: Monterrey #5435">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Formación Escolar</label>
+                  <input type="text" class="form-control" id="Formacion" placeholder="Ej: Titulo Universitario">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Telefono</label>
+                  <input type="text" class="form-control" id="Telefono" placeholder="Ej: 867123456">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Correo</label>
+                  <input type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="formGroupExampleInput2">Experiencia</label>
+                  <input type="text" class="form-control" id="Experiencia" placeholder="Ej: 5 años">
+                </div>
+              </form>
+
+              <button id="botonEnviar" class="btn btn" type="button">Enviar</button>
+            </div>
+          </div>
+
+        </div>  
+
+
+        <div class="col-lg-3 col-md-12 col-sm-12">
+        </div>
+       </div> 
+
+
   </div>   
 
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
