@@ -8,7 +8,7 @@ import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-emp
 
 const routes: Routes = [
   {path: 'bolsa-de-trabajo', component: BPrincipalComponent},
-  {path: 'informacion-oferta', component: InformacionOfertaComponent},
+  {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
   {path: 'enmidirectorio', component: EPrincipalComponent},
   {path: 'enmidirectorio/informacion/empresa/:id', component: EEmpresaInformacionComponent}
 ];
