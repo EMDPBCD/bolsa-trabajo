@@ -24,7 +24,7 @@ export class EPrincipalComponent {
   obtenerBanners()
   {
     this.banners = new Array;
-    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/banners').subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/banners').subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.banners.push(data[i]);
