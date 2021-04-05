@@ -1,0 +1,33 @@
+
+<div id="sliderEPrincipal" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+  <div class="carousel-inner">
+    <div *ngFor="let empresa of informacionEmpresa;">
+      <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let imagen of empresa['imagenes'];  let i = index; let esElPrimero = first;">
+        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 400px;"> 
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#sliderEPrincipal" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#sliderEPrincipal" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div class="jumbotron" *ngFor="let empresa of informacionEmpresa; let i = index;" >
+    <h1>{{empresa['nombreEmpresa']}}</h1>
+    <small>{{empresa['categoria']}} / {{empresa['subCategoria']}}</small>
+    <p class="lead">{{empresa['descripcion']}}</p>
+    <h1>Sucursales</h1>
+    <div *ngFor = "let sucursal of empresa['sucursales']">
+      <p>{{sucursal["sucursal"]}}</p>
+      <p>Telefono: {{sucursal["telefono"]}}</p>
+      <p>Correo: {{sucursal["correo"]}}</p>
+      <p>Horario: {{sucursal["horario"]}}</p>
+      <p>----------------------------------</p>
+    </div>
+  </div>

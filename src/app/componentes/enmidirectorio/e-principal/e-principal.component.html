@@ -1,1 +1,56 @@
-<p>e-principal works!</p>
+
+  <router-outlet></router-outlet>
+  <div id="sliderEPrincipal" class="carousel slide" data-bs-touch="false" data-bs-interval="false" >
+    <div class="carousel-inner" >
+      <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let banner  of banners; let esElPrimero = first;">
+          <img src="{{banner.imagen}}" class="d-block w-100" (click) = "verMas(banner.empresa_id)"> 
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#sliderEPrincipal" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sliderEPrincipal" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="row mt-3 mb-3">
+    <div class="col-3" style="margin-left: 10px;">
+
+      <ul class="list-group list-group-flush" *ngFor = "let categoria of categorias; let i = index" style = "background-color: #5BC0EB !important" >
+        <li class="list-group-item" style = "background-color: #0E79B2 !important; color: white" >{{categoria["categoria"]}}
+          <ul *ngFor = "let subCategoria of categoria['subCategoria']">
+            <li >{{subCategoria}}</li>
+          </ul>
+        </li>
+      </ul>
+<!--
+        <div class="list-group" *ngFor = "let categoria of categorias; let i = index">
+            <button id="cabeceraLista" type="button" class="list-group-item list-group-item-action active" disabled aria-current="true">
+              {{categoria["categoria"]}}
+              <ul *ngFor = "let subCategoria of categoria['subCategoria']">
+                <li (click) = "clk('SUBCATEGORIA')">{{subCategoria}}</li>
+              </ul>
+            </button>
+          </div>
+          -->
+    </div>
+    <div class="col-7">
+        <div id="contenidoPrincipal" class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col" *ngFor="let item of empresas; let i = index;">
+                  <div class="card" >
+                    <img src="{{item['logotipo']}}" class="card-img-top" alt="..." style = "width: 351px; height: 195px;">
+                    <div class="card-body" style = "width: 351px; height: 120px; ">
+                      <h5 class="card-title">{{item["nombreEmpresa"]}}</h5>
+                      <p class="card-text">{{item["descripcion"]}}</p>
+                    </div>
+                    <button class = "btn" (click) = "verMas(item['id'])" style = "background-color: #0E79B2; color: white;border-radius: 0 !important;">Ver mas</button>
+                  </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
