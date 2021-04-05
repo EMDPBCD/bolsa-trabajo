@@ -29,14 +29,14 @@
               <div class="col-3">
                 <div id="tarjetaInformacion" class="card mb-3" style="max-width: 18rem;">
                     <div class="card-body">
-                     <img class="img-fluid"  style="margin: 0 auto; display: block;" src="https://lh3.googleusercontent.com/proxy/2W3h7lLvg8L5jVUnwuy3fF8ANTA1ob_L5oLJfQgcLh2ibaU_rKKipLTyezpJe-b4uc7yAsLD3MdAeyJJ6A">
+                     <img class="img-fluid"  style="margin: 0 auto; display: block;" src="{{empresa[0]['empresa_logo']}}">
                     </div>
                   </div>
               </div>
               <div class="col-7">
-                  <h2 style="font-weight:700;">Transportista</h2>
-                  <h5 style="font-weight:600; font-size: small;">25,000-30,000 mensual</h5>
-                  <h5 style="font-weight:600; font-size:medium;">Nuevo Laredo, Tamps - Medio tiempo, Permanente - Movil</h5>
+                  <h2 style="font-weight:700;">{{empresa[0]['puesto']}}</h2>
+                  <h5 style="font-weight:600; font-size: small;">{{empresa[0]['salario']}} mensual</h5>
+                  <h5 style="font-weight:600; font-size:medium;">{{empresa[0]['empresa_direccion']}}</h5>
               </div>
            </div>  
 
@@ -46,9 +46,7 @@
             <div id="tarjetaInformacion" class="card">
                 <div class="card-header" id="headcard">Beneficios</div>
                 <div class="card-body">
-                  <p id="puntocard1" class="card-text">* Prestación 1</p>
-                  <p id="puntocard1" class="card-text">* Prestación 2</p>
-                  <p id="puntocard1" class="card-text">* Prestación 3</p>
+                  <p id="puntocard1" class="card-text" *ngFor="let beneficio of empresa[1]" > {{beneficio.nombre}} </p>
                 </div>
               </div>
           </div>
@@ -56,25 +54,11 @@
           <div class="col-lg-6 col-md-6 col-sm-12">
               <div id="cuadroInformacion" class="container-fluid">
                 <p id="Descripcion">Descripción</p>
-                  <p>Administrar los recursos y los requerimientos de los clientes internos y externos basados dando un servicio de calidad.
+                  <p>{{empresa[0]['empresa_descripcion']}}
 
 
-
-                    Mayo de 30 años
-                    
-                    Experiencia 3 años en Coordinación de Transporte
-                    
-                    Licenciatura en Logística y/o Administración
-                    
-                    Conocimiento CTPA</p>
-                 <p id="Funciones">Funciones</p>
-                 <ul class="list-group list-group-flush" style="width:200px;">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Morbi leo risus</li>
-                  <li class="list-group-item">Porta ac consectetur ac</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                  </p>
+     
               </div>
           </div>
 
@@ -82,7 +66,7 @@
                <div id="tarjetaInformacion" class="card">
                  <div class="card-header" id="headcard2">Hace 5 dias</div>
                  <div class="card-body">
-                    <p id="textocard2" class="card-text">Empresa confidencial</p>
+                    <p id="textocard2" class="card-text">{{empresa[0]['empresa_nombre']}}</p>
                  </div>
                  <div class="card-footer d-grid gap-2">
                   <button class="btn btn-danger" type="button">Postularme</button> 

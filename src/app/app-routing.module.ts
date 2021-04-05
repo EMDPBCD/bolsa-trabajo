@@ -7,7 +7,7 @@ import { EPrincipalComponent } from './componentes/enmidirectorio/e-principal/e-
 
 const routes: Routes = [
   {path: 'bolsa-de-trabajo', component: BPrincipalComponent},
-  {path: 'informacion-oferta', component: InformacionOfertaComponent},
+  {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
   {path: 'enmidirectorio', component: EPrincipalComponent}
 ];
 
