@@ -35,7 +35,7 @@ export class EPrincipalComponent {
   obtenerCategorias()
   {
     this.categorias = new Array;
-    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/categorias').subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/categorias').subscribe(data => {
         Object.entries(data).forEach(
           ([key, value]) => {
             let subCategorias = [];      
@@ -53,7 +53,7 @@ export class EPrincipalComponent {
   obtenerEmpresas()
   {
     this.empresas = new Array;
-    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/empresas').subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/empresas').subscribe(data => {
         Object.entries(data).forEach(
           ([key, value]) => {
             let nombreEmpresa = key

@@ -14,7 +14,7 @@ export class EEmpresaInformacionComponent {
   {
     this.informacionEmpresa = new Array;
     let id = this.route.snapshot.paramMap.get('id')
-    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/empresas/' + id).subscribe(data => 
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/empresas/' + id).subscribe(data => 
     {
       Object.entries(data).forEach(
         ([key, value]) => {
