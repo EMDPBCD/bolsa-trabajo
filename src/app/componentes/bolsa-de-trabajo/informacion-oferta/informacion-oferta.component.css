@@ -4,7 +4,14 @@
     border-radius: 5px;
     box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
     padding: 10px;
+}
 
+#cuadroFormulario
+{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    padding: 10px;
 }
 
 #tarjetaInformacion
@@ -54,3 +61,21 @@ li
     font-size: large;
     
 }
+
+#botonPostular
+{
+    background-color: #ef8c17;
+    color: white;
+}
+
+#botonEnviar
+{
+    background-color: #ef8c17;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+
+    
+}
+
