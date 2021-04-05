@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-e-principal',
@@ -8,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EPrincipalComponent {
   banners: any[];
-  categorias: any[];
+  categorias: any;
   empresas: any[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:ActivatedRoute, private router: Router) { }
 
   ngOnInit() 
   {
@@ -35,7 +36,17 @@ export class EPrincipalComponent {
   {
     this.categorias = new Array;
     this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/categorias').subscribe(data => {
-        this.categorias = data;
+        Object.entries(data).forEach(
+          ([key, value]) => {
+            let subCategorias = [];      
+            Object.entries(value).forEach(
+              ([key, value]) => {
+                  subCategorias.push(value)
+              }
+            )
+           this.categorias.push({categoria: key, subCategoria: subCategorias})
+          }
+        );
     })
   }
 
@@ -46,23 +57,23 @@ export class EPrincipalComponent {
         Object.entries(data).forEach(
           ([key, value]) => {
             let nombreEmpresa = key
+            let id = value["id"];
             let descripcion = value["descripcion"]
             let logotipo = value["logotipo"]
-            let sucursales = [];
-            Object.entries(value["sucursales"]).forEach(
-              ([keySucursales, valueSucursales]) => 
-              {
-                sucursales.push({"sucursal": [keySucursales], "correo": valueSucursales["correo"]})
-              }
-            )
             this.empresas.push({
+              id: id,
               nombreEmpresa: nombreEmpresa,
               descripcion: descripcion,
-              logotipo: logotipo,
-              sucursales: sucursales
+              logotipo: logotipo
+            
             })
           }
         );
     })
+  }
+
+  verMas(id)
+  {
+    this.router.navigate(['informacion/empresa', id],  {relativeTo: this.route});
   }
 }
