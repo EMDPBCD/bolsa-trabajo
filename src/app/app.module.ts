@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { BPrincipalComponent } from './componentes/bolsa-de-trabajo/b-principal/b-principal.component';
 import { EPrincipalComponent } from './componentes/enmidirectorio/e-principal/e-principal.component';
 import { InformacionOfertaComponent } from './componentes/bolsa-de-trabajo/informacion-oferta/informacion-oferta.component';
-import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-empresa-informacion/e-empresa-informacion.component';  
+import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-empresa-informacion/e-empresa-informacion.component';
+import { EBuscadorComponent } from './componentes/enmidirectorio/e-buscador/e-buscador.component';  
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-emp
     EPrincipalComponent,
     InformacionOfertaComponent,
     EEmpresaInformacionComponent,
+    EBuscadorComponent,
   ],
   imports: [
     BrowserModule,
