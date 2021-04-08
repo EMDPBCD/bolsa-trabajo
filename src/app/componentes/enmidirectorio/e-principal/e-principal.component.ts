@@ -99,7 +99,7 @@ export class EPrincipalComponent {
     this.http
       .get<any>
       (
-        'http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/buscador/' +
+        'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/buscador/' +
           busqueda
       )
       .subscribe((data) => 

@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <div *ngFor="let empresa of informacionEmpresa;">
       <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let imagen of empresa['imagenes'];  let i = index; let esElPrimero = first;">
-        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 400px;"> 
+        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 336px;"> 
       </div>
     </div>
   </div>
@@ -19,8 +19,8 @@
 
 
 <div class="jumbotron" *ngFor="let empresa of informacionEmpresa; let i = index;" >
-    <h1>{{empresa['nombreEmpresa']}}</h1>
-    <small>{{empresa['categoria']}} / {{empresa['subCategoria']}}</small>
+  <small>{{empresa['categoria']}} / {{empresa['subCategoria']}}</small>
+    <p><b>{{empresa['nombreEmpresa']}}</b></p>
     <p class="lead">{{empresa['descripcion']}}</p>
     <h1>Sucursales</h1>
     <div *ngFor = "let sucursal of empresa['sucursales']">
