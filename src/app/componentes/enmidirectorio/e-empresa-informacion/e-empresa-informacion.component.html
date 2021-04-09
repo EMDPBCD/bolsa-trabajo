@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <div *ngFor="let empresa of informacionEmpresa;">
       <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let imagen of empresa['imagenes'];  let i = index; let esElPrimero = first;">
-        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 400px;"> 
+        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 336px;"> 
       </div>
     </div>
   </div>
