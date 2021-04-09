@@ -20,7 +20,7 @@ export class InformacionOfertaComponent implements OnInit {
 
   obtenerEmpresa(){
     this.empresa = new Array;
-    this.http.get<any>('http://localhost/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
         for(let i = 0; i < data[0].length; i++)
         {
 
