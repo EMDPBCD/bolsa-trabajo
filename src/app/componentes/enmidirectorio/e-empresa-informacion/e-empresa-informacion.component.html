@@ -22,8 +22,8 @@
   <div class="row mt-5 mb-5">
     <div class="col-6">
       <div id="contenedorTexto">
-      <div class="row justify-content-center">
-        <img src="assets/logoman.jpg" style="width: 250px;">
+      <div class="row justify-content-center" *ngFor="let empresa of informacionEmpresa; let i = index;">
+        <img src="{{empresa['logotipo']}}" style="width: 250px;">
         </div>
         <div class="jumbotron" *ngFor="let empresa of informacionEmpresa; let i = index;" >
           <p id="titulo">{{empresa['nombreEmpresa']}}</p>
@@ -42,8 +42,8 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <img class="img-fluid" src="https://21chefs.com/wp-content/uploads/2018/08/Quintonil2.jpg">
+    <div class="col-6" *ngFor="let empresa of informacionEmpresa; let i = index;">
+      <img class="img-fluid" src="{{empresa['imgLateral']}}">
     </div>
   </div> 
 </div>

@@ -14,13 +14,14 @@ export class EEmpresaInformacionComponent {
   {
     this.informacionEmpresa = new Array;
     let id = this.route.snapshot.paramMap.get('id')
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/enmidirectorio/empresas/' + id).subscribe(data => 
+    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/enmidirectorio/empresas/' + id).subscribe(data => 
     {
       Object.entries(data).forEach(
         ([key, value]) => {
           let nombreEmpresa = key;
           let descripcion = value["descripcion"];
           let logotipo = value["logotipo"];
+          let imagenLateral = value["img_lateral"];
           let categoria = value["categoria"];
           let subCategoria = value["sub_categoria"];
           let sucursales = [];
@@ -49,6 +50,7 @@ export class EEmpresaInformacionComponent {
             nombreEmpresa: nombreEmpresa,
             descripcion: descripcion,
             logotipo: logotipo,
+            imgLateral: imagenLateral,
             categoria: categoria,
             subCategoria: subCategoria,
             sucursales: sucursales,
