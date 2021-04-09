@@ -18,16 +18,33 @@
 </div>
 
 
-<div class="jumbotron" *ngFor="let empresa of informacionEmpresa; let i = index;" >
-    <h1>{{empresa['nombreEmpresa']}}</h1>
-    <small>{{empresa['categoria']}} / {{empresa['subCategoria']}}</small>
-    <p class="lead">{{empresa['descripcion']}}</p>
-    <h1>Sucursales</h1>
-    <div *ngFor = "let sucursal of empresa['sucursales']">
-      <p>{{sucursal["sucursal"]}}</p>
-      <p>Telefono: {{sucursal["telefono"]}}</p>
-      <p>Correo: {{sucursal["correo"]}}</p>
-      <p>Horario: {{sucursal["horario"]}}</p>
-      <p>----------------------------------</p>
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-6">
+      <div id="contenedorTexto">
+      <div class="row justify-content-center">
+        <img src="assets/logoman.jpg" style="width: 250px;">
+        </div>
+        <div class="jumbotron" *ngFor="let empresa of informacionEmpresa; let i = index;" >
+          <p id="titulo">{{empresa['nombreEmpresa']}}</p>
+          <p id="categorias">{{empresa['categoria']}} / {{empresa['subCategoria']}}</p>
+          <p id="descripcion" class="lead">{{empresa['descripcion']}}</p>
+          <hr style="width: 100%;"/>
+          <h1>Sucursales de la ciudad</h1>
+    
+          <div class="mt-3 mb-2" *ngFor = "let sucursal of empresa['sucursales']" id="contenedorSucursales">
+            <p id="sucursal">{{sucursal["sucursal"]}}</p>
+            <p id="telefono">Telefono: {{sucursal["telefono"]}}</p>
+            <p id="correo">Correo: {{sucursal["correo"]}}</p>
+            <p id="horario">Horario: {{sucursal["horario"]}}</p>
+        
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="col-6">
+      <img class="img-fluid" src="https://21chefs.com/wp-content/uploads/2018/08/Quintonil2.jpg">
+    </div>
+  </div> 
+</div>
+

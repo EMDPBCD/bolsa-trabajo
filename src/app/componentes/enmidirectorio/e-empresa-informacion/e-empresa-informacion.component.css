@@ -4,3 +4,43 @@
     background-size: cover;
     height: 100%;
 }
+
+#contenedorTexto
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+}
+
+#titulo
+{
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+#categorias
+{
+    font-size:medium;
+    font-weight: 500;
+}
+
+#descripcion
+{
+    font-size:large;
+    font-weight: 600;
+}
+
+#contenedorSucursales
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #dddddd ;
+}
+
+#sucursal, #telefono, #correo, #horario
+{
+    font-size: medium;
+    font-weight:700;
+}
