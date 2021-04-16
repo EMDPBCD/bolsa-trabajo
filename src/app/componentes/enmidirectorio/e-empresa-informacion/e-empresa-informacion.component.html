@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <div *ngFor="let empresa of informacionEmpresa;">
       <div class="carousel-item" [ngClass]="{'active': esElPrimero }" *ngFor = "let imagen of empresa['imagenes'];  let i = index; let esElPrimero = first;">
-        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid" style = "height: 336px;"> 
+        <img src="{{imagen['imagen']}}" class="d-block w-100 img-fluid"> 
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="row mt-5 mb-5">
-    <div class="col-6">
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
       <div id="contenedorTexto">
       <div class="row justify-content-center">
         <img src="assets/logoman.jpg" style="width: 250px;">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6 col-md-6 col-sm-12 mb-2"  style="display: block; margin: 0 auto;">
       <img class="img-fluid" src="https://21chefs.com/wp-content/uploads/2018/08/Quintonil2.jpg">
     </div>
   </div> 
