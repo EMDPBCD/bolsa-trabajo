@@ -1,9 +1,14 @@
 
-<nav id="navbar" class="navbar sticky-top navbar-light">
-  <a class="navbar-brand ml-5" href="#" style="color: white;">
-    Hoy en Laredo
-  </a>
+<nav class="navbar navbar-light" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white; cursor: pointer;">Hoy en Laredo</a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" style="width: 250px;" placeholder="Busca en un solo lugar...." aria-label="Search">
+      <button class="btn btn" type="submit" style="background-color:#ef8c17; color: white;">Buscar</button>
+    </form>
+  </div>
 </nav>
+
 <router-outlet></router-outlet>
 
 

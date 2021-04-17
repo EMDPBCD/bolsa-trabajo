@@ -20,6 +20,11 @@
     
 }
 
+#tarjetaPostular
+{
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+}
+
 #headcard
 {
     background-color:#1ea6b2;
@@ -53,6 +58,7 @@ li
 #Descripcion
 {
     font-size:x-large;
+    font-weight: 600;
 }
 
 #Funciones
@@ -77,5 +83,20 @@ li
     width: 150px;
 
     
+}
+
+/*COMIENZAN LAS OPCIONES DE MUESTRA EN TAMAÑOS*/
+
+@media only screen and (min-width:350px) and (max-width:1000px)
+{
+    #tarjetaInformacion
+    {
+        display: none !important;
+    }
+
+    #tarjetaPostular
+    {
+        margin-top: 20px;
+    }
 }
 
