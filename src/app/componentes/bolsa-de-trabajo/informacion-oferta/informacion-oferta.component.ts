@@ -43,7 +43,7 @@ export class InformacionOfertaComponent implements OnInit {
 
 
   
-    this.http.post<any>('http://localhost:80/hoy-en-laredo/src/api.php/bolsa-de-trabajo/aspirantes', 
+    this.http.post<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/aspirantes', 
     { 
       id: 8,
       nombre: data.nombre,
@@ -61,4 +61,5 @@ export class InformacionOfertaComponent implements OnInit {
       
   }
 
+  
 }

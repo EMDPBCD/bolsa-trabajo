@@ -10,15 +10,33 @@ import { Router, NavigationEnd } from '@angular/router';
 export class BPrincipalComponent 
 {
   title = 'hoy-en-laredo';
+  categoriaSeleccionada;
   ofertas: any[];
   categorias: any[];
-  categoriaSeleccionada;
+  banners: any[];
 
   constructor(private http: HttpClient, private router: Router){}
 
   ngOnInit()
   {
+    this.obtenerBanners()
     this.buscarCategorias();
+  }
+
+  obtenerBanners() 
+  {
+    this.banners = new Array();
+    this.http
+      .get<any>
+      (
+        'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/banners'
+      )
+      .subscribe((data) => 
+      {
+        for (let i = 0; i < data.length; i++) {
+          this.banners.push(data[i]);
+        }
+      });
   }
 
   buscarOfertas()
