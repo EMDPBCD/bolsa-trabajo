@@ -21,7 +21,7 @@ export class InformacionOfertaComponent implements OnInit {
   obtenerEmpresa(){
     this.empresa = new Array;
     let informacionEmpresa = [];
-    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
           Object.entries(data).forEach(
             ([key,value]) => {
               this.idOferta = key;
