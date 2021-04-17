@@ -20,13 +20,40 @@ export class InformacionOfertaComponent implements OnInit {
 
   obtenerEmpresa(){
     this.empresa = new Array;
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
-        for(let i = 0; i < data[0].length; i++)
-        {
+    let informacionEmpresa = [];
+    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
+          Object.entries(data).forEach(
+            ([key,value]) => {
+              this.idOferta = key;
+              let beneficios = [];
 
-          this.empresa.push(data[0][i]);
-        }
-        console.log(this.empresa);
+              console.log(value);
+
+              Object.entries(value['beneficios']).forEach(
+                ([keyBeneficios,valueBeneficios]) => {
+                  beneficios.push(valueBeneficios);
+                }
+              )
+
+              this.empresa.push(
+                {
+                  oferta_id: key,
+                  puesto: value["puesto"],
+                  salario: value["salario"],
+                  empresa_direccion: value["empresa_direccion"],
+                  empresa_logo: value["empresa_logo"],
+                  descripcion: value["descripcion"],
+                  imagen_uno: value["imagen_uno"],
+                  imagen_dos: value["imagen_dos"],
+                  imagen_tres: value["imagen_tres"],
+                  diferencia_dias: value["diferencia_dias"],
+                  beneficios: beneficios
+              })
+            }
+          )
+          console.log(this.empresa)
+          //his.empresa.push(data);
+        
     })   
   }
 
