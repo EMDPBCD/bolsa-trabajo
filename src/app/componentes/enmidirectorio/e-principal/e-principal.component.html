@@ -141,7 +141,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12 mb-2" *ngFor="let item of empresas; let i = index">
             <div class="card mb-3" style="height: 370px;">
-              <img src="{{ item['logotipo'] }}" class="card-img-top img-fluid" alt="...">
+              <img src="{{ item['logotipo'] }}" style = "width: 320px; height: 195px;" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{ item["nombreEmpresa"] }}</h5>
                 <p class="card-text">{{ item["descripcion"] }}</p>
