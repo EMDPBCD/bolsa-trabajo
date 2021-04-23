@@ -16,7 +16,7 @@ export class NInformacionCompletaComponent implements OnInit {
   {
     this.informacionNoticia = new Array;
     let id = this.route.snapshot.paramMap.get('id')
-    this.http.get<any>('http://localhost:80/hoy-en-laredo/src/api.php/noticias/informacion/' + id).subscribe(data => 
+    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/noticias/informacion/' + id).subscribe(data => 
     {
       Object.entries(data).forEach(
         ([key, value]) => {

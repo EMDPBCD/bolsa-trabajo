@@ -19,7 +19,7 @@ export class NoticiasPrincipalComponent implements OnInit {
       this.http
         .get<any>
         (
-          'http://localhost:80/hoy-en-laredo/src/api.php/noticias/principal'
+          'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/noticias/principal'
         )
         .subscribe((data) => 
         {
