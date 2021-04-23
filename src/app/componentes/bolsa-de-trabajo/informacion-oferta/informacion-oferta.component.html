@@ -187,8 +187,8 @@
               <label for="formGroupExampleInput2">Experiencia</label>
               <input name="experiencia" type="text" class="form-control" id="Experiencia" placeholder="Ej: 5 años" ngModel>
             </div>
-            <button  type = "submit" value = "submit" id="botonEnviar" class="btn btn">Enviar</button>
-  
+            <button *ngIf="!ocultar" type = "submit" value = "submit" id="botonEnviar" class="btn btn">Enviar</button>
+            <h1 *ngIf="ocultar">Enviando...</h1>
           </form>
         </div>
         </div>

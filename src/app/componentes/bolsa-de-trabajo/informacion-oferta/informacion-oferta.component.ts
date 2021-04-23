@@ -13,6 +13,7 @@ export class InformacionOfertaComponent implements OnInit {
 
   idOferta:string;
   empresa:any;
+  ocultar:boolean = false;
   ngOnInit(): void {
     this.idOferta = this._route.snapshot.paramMap.get('oferta');
     this.obtenerEmpresa();
@@ -59,6 +60,7 @@ export class InformacionOfertaComponent implements OnInit {
 
   enviarSolicitud(data)
   {
+    this.ocultar = true;
     console.log(data.nombre);
     console.log(data.apellidos);
     console.log(data.direccion);
@@ -67,7 +69,7 @@ export class InformacionOfertaComponent implements OnInit {
     console.log(data.correo);
     console.log(data.experiencia);
     console.log(this.idOferta);
-
+    
 
   
     this.http.post<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/aspirantes', 
@@ -83,7 +85,8 @@ export class InformacionOfertaComponent implements OnInit {
       oferta: this.idOferta 
     }).subscribe(data => 
       {
-        alert(data)
+        alert(data);
+        this.ocultar =false;
       })
       
   }
