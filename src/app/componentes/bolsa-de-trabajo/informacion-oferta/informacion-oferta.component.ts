@@ -14,9 +14,27 @@ export class InformacionOfertaComponent implements OnInit {
   idOferta:string;
   empresa:any;
   ocultar:boolean = false;
+  nombre:string;
+  apellido:string;
+  direccion:string;
+  formacion:string;
+  telefono:string;
+  correo:string;
+  experiencia:string;
   ngOnInit(): void {
     this.idOferta = this._route.snapshot.paramMap.get('oferta');
     this.obtenerEmpresa();
+  }
+
+  limpiarFormulario(){
+    this.nombre ="";
+    this.apellido="";
+    this.direccion="";
+    this.formacion="";
+    this.telefono="";
+    this.correo="";
+    this.experiencia="";
+
   }
 
   obtenerEmpresa(){
@@ -87,6 +105,7 @@ export class InformacionOfertaComponent implements OnInit {
       {
         alert(data);
         this.ocultar =false;
+        this.limpiarFormulario();
       })
       
   }
