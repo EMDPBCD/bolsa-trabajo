@@ -1,0 +1,16 @@
+<div *ngFor = "let informacion of informacionNoticia">
+    <ul>
+        <li>{{informacion["titulo"]}}</li>
+        <li>{{informacion["encabezado"]}}</li>
+        <li>{{informacion["encabezadoImagen"]}}</li>
+        <li>{{informacion["cuerpo"]}}</li>
+        <li>{{informacion["fecha"]}}</li>
+        <li>{{informacion["seccion"]}}</li>
+        <li>Imagenes: </li>
+        <div *ngFor = "let imagen of informacion['imagenes']">
+            <ul>
+                <li>{{imagen["imagen"]}}</li>
+            </ul>
+        </div>
+    </ul>
+</div>

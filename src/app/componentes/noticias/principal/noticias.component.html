@@ -1,0 +1,9 @@
+<div *ngFor = "let noticia of noticias">
+    <ul>
+        <li>{{noticia.seccion}}</li>
+        <li>{{noticia.titulo}}</li>
+        <li>{{noticia.encabezado}}</li>
+        <li>{{noticia.encabezado_imagen}}</li>
+        <li><p (click)="verMas(noticia.id)">VER MAS</p></li>
+    </ul>
+</div>

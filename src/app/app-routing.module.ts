@@ -5,14 +5,20 @@ import { BPrincipalComponent } from './componentes/bolsa-de-trabajo/b-principal/
 import { InformacionOfertaComponent} from './componentes/bolsa-de-trabajo/informacion-oferta/informacion-oferta.component'
 import { EPrincipalComponent } from './componentes/enmidirectorio/e-principal/e-principal.component';
 import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-empresa-informacion/e-empresa-informacion.component';
-import { NPrincipalComponent } from './componentes/noticiero/n-principal/n-principal/n-principal.component';
+import { NoticiasPrincipalComponent } from './componentes/noticias/principal/noticias.component';
+import { NInformacionCompletaComponent } from './componentes/noticias/n-informacion-completa/n-informacion-completa.component';
+
 
 const routes: Routes = [
+  //Bolsa de trabajo
   {path: 'bolsa-de-trabajo', component: BPrincipalComponent},
   {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
+  //Enmidirectorio
   {path: 'enmidirectorio', component: EPrincipalComponent},
   {path: 'enmidirectorio/informacion/empresa/:id', component: EEmpresaInformacionComponent},
-  {path: 'noticias', component: NPrincipalComponent}
+  //Noticia
+  {path: 'noticias', component: NoticiasPrincipalComponent},
+  {path: 'noticias/informacion-noticia/:id', component: NInformacionCompletaComponent}
 ];
 
 @NgModule({

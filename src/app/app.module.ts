@@ -10,7 +10,9 @@ import { EPrincipalComponent } from './componentes/enmidirectorio/e-principal/e-
 import { InformacionOfertaComponent } from './componentes/bolsa-de-trabajo/informacion-oferta/informacion-oferta.component';
 import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-empresa-informacion/e-empresa-informacion.component';
 import { EBuscadorComponent } from './componentes/enmidirectorio/e-buscador/e-buscador.component';
-import { NPrincipalComponent } from './componentes/noticiero/n-principal/n-principal/n-principal.component';  
+import { NoticiasPrincipalComponent } from './componentes/noticias/principal/noticias.component';
+import { NInformacionCompletaComponent } from './componentes/noticias/n-informacion-completa/n-informacion-completa.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { NPrincipalComponent } from './componentes/noticiero/n-principal/n-princ
     InformacionOfertaComponent,
     EEmpresaInformacionComponent,
     EBuscadorComponent,
-    NPrincipalComponent,
+    NoticiasPrincipalComponent,
+    NInformacionCompletaComponent,
   ],
   imports: [
     BrowserModule,
