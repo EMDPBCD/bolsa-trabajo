@@ -1,0 +1,25 @@
+#img
+{
+    width: 100%;
+    height: auto;
+}
+
+#titulo
+{
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+@supports(object-fit: cover)
+{
+    #img
+    {
+        height:150px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+}
