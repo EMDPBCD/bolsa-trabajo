@@ -1,3 +1,47 @@
+<div class="container">
+<div class="row mt-5">
+    <div class="col-12" *ngFor = "let informacion of informacionNoticia">
+        <div class="container">
+        <h1 id="titulo">{{informacion["titulo"]}}</h1>
+        <h5 id="fecha">{{informacion["fecha"]}}</h5>
+        <h5 id="seccion">{{informacion["seccion"]}}</h5>
+        </div>
+    </div>
+ </div>       
+
+<div class="row mb-5">
+ <div class="col-9" *ngFor = "let informacion of informacionNoticia">
+    <div class="container-fluid">
+        <img id="imagen" src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/harris-pelosi.jpeg" class="img-fluid">
+        <p id="encabezado">{{informacion["encabezado"]}}</p>
+        <p id="cuerpo">{{informacion["cuerpo"]}}</p>
+    </div>   
+ </div>
+
+ <div class="col-3">  
+        <div id="otraNoticia">
+            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
+            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
+        </div>   
+
+        <div id="otraNoticia">
+            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
+            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
+        </div>   
+
+        <div id="otraNoticia">
+            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
+            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
+        </div>   
+ 
+</div> 
+
+</div>
+
+</div>
+
+
+<!--
 <div *ngFor = "let informacion of informacionNoticia">
     <ul>
         <li>{{informacion["titulo"]}}</li>
@@ -9,8 +53,9 @@
         <li>Imagenes: </li>
         <div *ngFor = "let imagen of informacion['imagenes']">
             <ul>
-                <li>{{imagen["imagen"]}}</li>
+                <li>{{imagen['imagen']}}</li>
             </ul>
         </div>
     </ul>
 </div>
+-->

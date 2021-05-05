@@ -1,0 +1,18 @@
+#titulo
+{
+    text-transform: uppercase;
+    font-size:xx-large;
+    font-weight:600;
+}
+
+#tituloMas
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: large;
+}
+
+#otraNoticia
+{
+    cursor: pointer;
+}

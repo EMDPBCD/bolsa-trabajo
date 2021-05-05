@@ -1,0 +1,43 @@
+#img
+{
+    width: 100%;
+    height: auto;
+}
+
+li,a
+{
+    cursor: pointer;
+}
+
+
+#titulo
+{
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+#tarjetaNoticias
+{
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+}
+
+#tarjetaNoticias:hover
+{
+    box-shadow: 0 4px 6px 3px rgb(198, 207, 234);
+    transition: .6s;
+}
+
+@supports(object-fit: cover)
+{
+    #img
+    {
+        height:150px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+}
