@@ -8,13 +8,17 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./noticias.component.css']
 })
 export class NoticiasPrincipalComponent implements OnInit {
+  noticiaPrincipal = [];
   noticias = [];
+  secciones = [];
 
   constructor(private http: HttpClient, private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() 
   {
+    this.obtenerNoticiaPrincipal();
+    this.obtenerSecciones();
       this.noticias = new Array();
       this.http
         .get<any>
@@ -30,6 +34,19 @@ export class NoticiasPrincipalComponent implements OnInit {
         });
   }
 
+  obtenerSecciones()
+  {
+    this.secciones = new Array();
+    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/noticias/secciones').subscribe((data) =>
+    {
+      for(let i = 0; i < data.length; i++)
+      {
+        this.secciones.push(data[i]);
+      }
+    })
+    console.log(this.secciones);
+  }
+
   verMas(id) {
     this.router.navigate(['informacion-noticia', id], 
     {
@@ -37,4 +54,18 @@ export class NoticiasPrincipalComponent implements OnInit {
     });
   }
 
+  obtenerNoticiaPrincipal()
+  {
+    this.noticiaPrincipal = new Array();
+    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/noticias/original').subscribe((data) =>
+    {
+      for(let i = 0; i < data.length; i++)
+      {
+        this.noticiaPrincipal.push(data[i]);
+      }
+    })
+    console.log(this.noticiaPrincipal);
+  }
+
+  
 }

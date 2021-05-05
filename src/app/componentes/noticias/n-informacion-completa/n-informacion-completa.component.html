@@ -12,35 +12,24 @@
 <div class="row mb-5">
  <div class="col-9" *ngFor = "let informacion of informacionNoticia">
     <div class="container-fluid">
-        <img id="imagen" src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/harris-pelosi.jpeg" class="img-fluid">
+        <img id="imagen" src="{{informacion['encabezadoImagen']}}" class="img-fluid">
         <p id="encabezado">{{informacion["encabezado"]}}</p>
         <p id="cuerpo">{{informacion["cuerpo"]}}</p>
     </div>   
  </div>
 
  <div class="col-3">  
-        <div id="otraNoticia">
-            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
-            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
-        </div>   
-
-        <div id="otraNoticia">
-            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
-            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
-        </div>   
-
-        <div id="otraNoticia">
-            <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210429095449-primera-biden-full-169.jpg?quality=100&strip=info&w=300&h=169&crop=1" class="img-fluid">
-            <h3 id="tituloMas" class="mt-2">TITULO DE OTRAS NOTICIAS</h3>
-        </div>   
- 
+        <div class = "mb-4" *ngFor = "let noticia of noticias">
+                <div id="otraNoticia" (click)="verMas(noticia.id)">
+                    <img src="{{noticia['encabezado_imagen']}}" class="img-fluid">
+                    <h3 id="tituloMas" class="mt-2">{{noticia.titulo}}</h3>
+                </div> 
+        </div> 
 </div> 
 
 </div>
 
 </div>
-
-
 <!--
 <div *ngFor = "let informacion of informacionNoticia">
     <ul>

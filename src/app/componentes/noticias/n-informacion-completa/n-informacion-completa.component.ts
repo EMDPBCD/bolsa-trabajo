@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-n-informacion-completa',
@@ -9,11 +9,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NInformacionCompletaComponent implements OnInit {
   informacionNoticia: any;
-
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  noticias: any;
+  constructor(private http: HttpClient, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit()
   {
+    this.obtenerInformacion();   
+  }
+
+  obtenerInformacion()
+  {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      // do your task for before route
+
+      return false;
+    }
     this.informacionNoticia = new Array;
     let id = this.route.snapshot.paramMap.get('id')
     this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/noticias/informacion/' + id).subscribe(data => 
@@ -48,7 +59,34 @@ export class NInformacionCompletaComponent implements OnInit {
           })
         }
       );
-    }) 
+    })
+    this.obtenerNoticiasLateral();
+  }
+
+  obtenerNoticiasLateral()
+  {
+    this.noticias = new Array();
+    this.http
+      .get<any>
+      (
+        'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/noticias/principal'
+      )
+      .subscribe((data) => 
+      {
+        for (let i = 0; i < data.length; i++) {
+          this.noticias.push(data[i]);
+        }
+        console.log(this.noticias);
+        //alert(JSON.stringify(data));
+      });
+      
+  }
+
+  verMas(id) {
+    this.router.navigate(['/noticias/informacion-noticia', id]);
+    //location.reload()
+    //window.location.reload();
+    this.obtenerInformacion();
   }
 
 }

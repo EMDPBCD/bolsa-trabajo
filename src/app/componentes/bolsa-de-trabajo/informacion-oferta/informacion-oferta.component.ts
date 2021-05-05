@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,6 +13,8 @@ export class InformacionOfertaComponent implements OnInit {
 
   idOferta:string;
   empresa:any;
+  @ViewChild('filterName') redel:ElementRef;
+
   ngOnInit(): void {
     this.idOferta = this._route.snapshot.paramMap.get('oferta');
     this.obtenerEmpresa();
@@ -70,7 +72,7 @@ export class InformacionOfertaComponent implements OnInit {
 
 
   
-    this.http.post<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/aspirantes', 
+    this.http.post<any>('http://localhost:80/hoy-en-laredo/src/api.php/bolsa-de-trabajo/aspirantes', 
     { 
       id: 8,
       nombre: data.nombre,
@@ -84,6 +86,10 @@ export class InformacionOfertaComponent implements OnInit {
     }).subscribe(data => 
       {
         alert(data)
+        if(data == "Tu solicitud ha sido enviada.")
+        {
+          (document.querySelector("formularioSolicitud") as HTMLFormElement).reset();
+        }
       })
       
   }

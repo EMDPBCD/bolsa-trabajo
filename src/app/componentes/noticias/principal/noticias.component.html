@@ -1,13 +1,17 @@
 <div class="container">
 
     <div class="row mt-5">
-        <div class="col-9" style="padding: 20px;">
-            <div class="card mb-3">
-                <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="col-9" style="padding: 20px;" *ngFor = "let principal of noticiaPrincipal">
+            <div class="card mb-3" (click)="verMas(principal.id)">
+                <img class="card-img-top" style = "height: 350px;"  src="{{principal.encabezado_imagen}}" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p>{{principal.seccion}}</p>
+                  <h5 class="card-title">{{principal.titulo}}</h5>
+                  <p class="card-text">{{principal.cuerpo}}
+                  </p>
+                  <!--
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  -->
                 </div>
             </div>
 
@@ -30,12 +34,8 @@
 
         <div class="col-3" style="padding: 20px;">
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+            <ul class="list-group list-group-flush" *ngFor = "let seccion of secciones">
+                <li class="list-group-item">{{seccion.nombre}}</li>
               </ul>
 
         </div>
