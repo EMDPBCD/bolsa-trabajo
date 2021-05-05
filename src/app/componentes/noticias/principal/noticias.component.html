@@ -13,7 +13,7 @@
 
             <div class="row">
                 <div class="col-4" *ngFor = "let noticia of noticias">
-                <div id="tarjetaNoticias" class="card"  (click)="verMas(noticia.id)">
+                <div id="tarjetaNoticias" class="card mb-3"  (click)="verMas(noticia.id)">
                     <img class="card-img-top" id="img" src="{{noticia.encabezado_imagen}}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title" id="titulo">{{noticia.titulo}}</h5>
@@ -39,6 +39,19 @@
               </ul>
 
         </div>
+</div>
+
+<nav  class="mt-3" aria-label="navegacion de pagina">
+  <ul class="pagination pagination-sm justify-content-center">
+      <a class="page-link">Anterior</a>
+    <li  class="page-item "><a class="page-link">1</a></li>
+    <li class="page-item active" ><a class="page-link" >2</a></li>
+    <li  class="page-item " ><a class="page-link">3</a></li>
+      <a class="page-link">Siguiente</a>
+  </ul>
+</nav>
+
+
 </div>
 
 
