@@ -8,18 +8,30 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./noticias.component.css']
 })
 export class NoticiasPrincipalComponent implements OnInit {
+  noticiaPrincipal = [];
   noticias = [];
-
+  secciones = [];
+  numeroDePaginas = [];
+  selectedIndex;
   constructor(private http: HttpClient, private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() 
   {
+    this.numeroDePaginas = new Array();
+    this.numeroDePaginas.push(0);
+    this.numeroDePaginas.push(1);
+    this.numeroDePaginas.push(2);
+    this.numeroDePaginas.push(3);
+    this.numeroDePaginas.push(4);
+    this.numeroDePaginas.push(5);
+    this.obtenerNoticiaPrincipal();
+    this.obtenerSecciones();
       this.noticias = new Array();
       this.http
         .get<any>
         (
-          'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/noticias/principal'
+          'http://localhost/hoy-en-laredo/src/api.php/noticias/principal/pagina/0'
         )
         .subscribe((data) => 
         {
@@ -30,6 +42,19 @@ export class NoticiasPrincipalComponent implements OnInit {
         });
   }
 
+  obtenerSecciones()
+  {
+    this.secciones = new Array();
+    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/noticias/secciones').subscribe((data) =>
+    {
+      for(let i = 0; i < data.length; i++)
+      {
+        this.secciones.push(data[i]);
+      }
+    })
+    console.log(this.secciones);
+  }
+
   verMas(id) {
     this.router.navigate(['informacion-noticia', id], 
     {
@@ -37,4 +62,43 @@ export class NoticiasPrincipalComponent implements OnInit {
     });
   }
 
+  obtenerNoticiaPrincipal()
+  {
+    this.noticiaPrincipal = new Array();
+    this.http.get<any>('http://localhost/hoy-en-laredo/src/api.php/noticias/original').subscribe((data) =>
+    {
+      for(let i = 0; i < data.length; i++)
+      {
+        this.noticiaPrincipal.push(data[i]);
+      }
+    })
+    console.log(this.noticiaPrincipal);
+  }
+
+  obtenerNoticiasPorNumeroDePagina(numeroDePagina, index)
+  {
+    this.selectedIndex = index;
+    this.numeroDePaginas = new Array();
+    this.numeroDePaginas.push(0);
+    this.numeroDePaginas.push(1);
+    this.numeroDePaginas.push(2);
+    this.numeroDePaginas.push(3);
+    this.numeroDePaginas.push(4);
+    this.numeroDePaginas.push(5);
+    this.obtenerNoticiaPrincipal();
+    this.obtenerSecciones();
+      this.noticias = new Array();
+      this.http
+        .get<any>
+        (
+          'http://localhost/hoy-en-laredo/src/api.php/noticias/principal/pagina/' + numeroDePagina
+        )
+        .subscribe((data) => 
+        {
+          for (let i = 0; i < data.length; i++) {
+            this.noticias.push(data[i]);
+          }
+          //alert(JSON.stringify(data));
+        });
+  }
 }
