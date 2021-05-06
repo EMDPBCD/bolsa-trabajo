@@ -14,7 +14,8 @@ export class EPrincipalComponent {
   botonBuscarDeshabilitado: boolean = false;
   botonBuscarTexto: string = 'Buscar';
   mostrarNoSeEncontraronEmpresas: boolean = false;
-
+  selectedIndex;
+  numeroDePaginas = [];
   constructor
   (
     private http: HttpClient,
@@ -24,6 +25,13 @@ export class EPrincipalComponent {
 
   ngOnInit() 
   {
+    this.numeroDePaginas = new Array();
+    this.numeroDePaginas.push(0);
+    this.numeroDePaginas.push(1);
+    this.numeroDePaginas.push(2);
+    this.numeroDePaginas.push(3);
+    this.numeroDePaginas.push(4);
+    this.numeroDePaginas.push(5);
     this.obtenerBanners();
     this.obtenerCategorias();
     this.obtenerEmpresas();
@@ -91,8 +99,10 @@ export class EPrincipalComponent {
       });
   }
 
-  buscarEmpresas(busqueda) 
+  buscarEmpresas(busqueda, index) 
   {
+    this.selectedIndex = index;
+
     this.botonBuscarDeshabilitado = true;
     this.botonBuscarTexto = 'Buscando...';
     this.empresas = new Array();
@@ -135,5 +145,30 @@ export class EPrincipalComponent {
     {
       relativeTo: this.route,
     });
+  }
+
+  obtenerNoticiasPorNumeroDePagina(numeroDePagina, index)
+  {
+    this.selectedIndex = index;
+    this.numeroDePaginas = new Array();
+    this.numeroDePaginas.push(0);
+    this.numeroDePaginas.push(1);
+    this.numeroDePaginas.push(2);
+    this.numeroDePaginas.push(3);
+    this.numeroDePaginas.push(4);
+    this.numeroDePaginas.push(5);
+      this.empresas = new Array();
+      this.http
+        .get<any>
+        (
+          'http://localhost/hoy-en-laredo/src/api.php/enmidirectorio/empresas/pagina/' + numeroDePagina
+        )
+        .subscribe((data) => 
+        {
+          for (let i = 0; i < data.length; i++) {
+            this.empresas.push(data[i]);
+          }
+          //alert(JSON.stringify(data));
+        });
   }
 }

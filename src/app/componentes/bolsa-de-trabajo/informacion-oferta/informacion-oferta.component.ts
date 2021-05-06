@@ -88,7 +88,7 @@ export class InformacionOfertaComponent implements OnInit {
         alert(data)
         if(data == "Tu solicitud ha sido enviada.")
         {
-          (document.querySelector("formularioSolicitud") as HTMLFormElement).reset();
+          window.location.reload();
         }
       })
       
