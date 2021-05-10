@@ -16,6 +16,7 @@ export class EPrincipalComponent {
   mostrarNoSeEncontraronEmpresas: boolean = false;
   selectedIndex;
   numeroDePaginas = [];
+  paginas;
   constructor
   (
     private http: HttpClient,
@@ -25,16 +26,9 @@ export class EPrincipalComponent {
 
   ngOnInit() 
   {
-    this.numeroDePaginas = new Array();
-    this.numeroDePaginas.push(0);
-    this.numeroDePaginas.push(1);
-    this.numeroDePaginas.push(2);
-    this.numeroDePaginas.push(3);
-    this.numeroDePaginas.push(4);
-    this.numeroDePaginas.push(5);
     this.obtenerBanners();
     this.obtenerCategorias();
-    this.obtenerEmpresas();
+    this.obtenerEmpresasPorNumeroDePagina(1,0);
   }
 
   obtenerBanners() 
@@ -52,6 +46,24 @@ export class EPrincipalComponent {
         }
       });
   }
+
+  mostrarPagina(index):boolean{
+    if (index == 0 || index == this.paginas-1) {
+      return true;
+    }
+    if(index == this.selectedIndex){
+      return true;
+    }
+    for (let i = 1; i <= 5; i++) {
+    if(index == this.selectedIndex-i){
+      return true;
+    }
+    if(index == this.selectedIndex+i){
+      return true;
+    }
+  }
+  return false;
+}
 
   obtenerCategorias() 
   {
@@ -72,6 +84,19 @@ export class EPrincipalComponent {
           this.categorias.push({ categoria: key, subCategoria: subCategorias });
         });
       });
+  }
+
+  obtenerPaginas(){
+    this.numeroDePaginas = new Array();
+    this.http.get<any>('http://localhost/hoy-en-laredo-backend/src/api.php/enmidirectorio/empresas/paginas').subscribe((data) =>
+    {
+      console.log(data);
+      this.paginas = data;
+      for(let i = 1; i <= data; i++)
+      {
+        this.numeroDePaginas.push(i);
+      }
+    })
   }
 
   obtenerEmpresas() 
@@ -147,21 +172,15 @@ export class EPrincipalComponent {
     });
   }
 
-  obtenerNoticiasPorNumeroDePagina(numeroDePagina, index)
+  obtenerEmpresasPorNumeroDePagina(numeroDePagina, index)
   {
+    this.obtenerPaginas();  
     this.selectedIndex = index;
-    this.numeroDePaginas = new Array();
-    this.numeroDePaginas.push(0);
-    this.numeroDePaginas.push(1);
-    this.numeroDePaginas.push(2);
-    this.numeroDePaginas.push(3);
-    this.numeroDePaginas.push(4);
-    this.numeroDePaginas.push(5);
       this.empresas = new Array();
       this.http
         .get<any>
         (
-          'http://localhost/hoy-en-laredo/src/api.php/enmidirectorio/empresas/pagina/' + numeroDePagina
+          'http://localhost/hoy-en-laredo-backend/src/api.php/enmidirectorio/empresas/pagina/' + numeroDePagina
         )
         .subscribe((data) => 
         {
