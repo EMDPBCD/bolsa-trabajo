@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, NavigationEnd } from '@angular/router'; 
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-b-principal',
   templateUrl: './b-principal.component.html',
   styleUrls: ['./b-principal.component.css']
 })
-export class BPrincipalComponent 
+export class BPrincipalComponent
 {
   title = 'hoy-en-laredo';
   categoriaSeleccionada;
@@ -23,15 +23,15 @@ export class BPrincipalComponent
     this.buscarCategorias();
   }
 
-  obtenerBanners() 
+  obtenerBanners()
   {
     this.banners = new Array();
     this.http
       .get<any>
       (
-        'http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/banners'
+        'http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/banners'
       )
-      .subscribe((data) => 
+      .subscribe((data) =>
       {
         for (let i = 0; i < data.length; i++) {
           this.banners.push(data[i]);
@@ -43,12 +43,12 @@ export class BPrincipalComponent
   {
     console.log(this.categoriaSeleccionada);
     this.ofertas = new Array;
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/ofertas/' + this.categoriaSeleccionada).subscribe(data => {
+    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/ofertas/' + this.categoriaSeleccionada).subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.ofertas.push(data[i]);
         }
-    })    
+    })
   }
 
   navegarOfertas()
@@ -59,12 +59,13 @@ export class BPrincipalComponent
   buscarCategorias()
   {
     this.categorias = new Array;
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/categorias').subscribe(data => {
+    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/categorias').subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.categorias.push(data[i]);
         }
-    })    
+        console.log(this.categorias);
+    })
   }
 
 }
