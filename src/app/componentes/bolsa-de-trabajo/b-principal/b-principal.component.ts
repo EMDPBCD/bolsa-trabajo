@@ -21,6 +21,7 @@ export class BPrincipalComponent
   {
     this.obtenerBanners()
     this.buscarCategorias();
+    this.todasLasOfertas();
   }
 
   obtenerBanners()
@@ -36,6 +37,7 @@ export class BPrincipalComponent
         for (let i = 0; i < data.length; i++) {
           this.banners.push(data[i]);
         }
+        console.log(this.banners);
       });
   }
 
@@ -48,6 +50,19 @@ export class BPrincipalComponent
         {
           this.ofertas.push(data[i]);
         }
+        console.log(this.ofertas);
+    })
+  }
+
+  todasLasOfertas()
+  {
+    this.ofertas = new Array;
+    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/ofertas/').subscribe(data => {
+        for(let i = 0; i < data.length; i++)
+        {
+          this.ofertas.push(data[i]);
+        }
+        console.log(this.ofertas);
     })
   }
 

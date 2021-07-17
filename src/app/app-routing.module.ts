@@ -11,14 +11,8 @@ import { NInformacionCompletaComponent } from './componentes/noticias/n-informac
 
 const routes: Routes = [
   //Bolsa de trabajo
-  {path: 'bolsa-de-trabajo', component: BPrincipalComponent},
+  {path: '', component: BPrincipalComponent},
   {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
-  //Enmidirectorio
-  {path: 'enmidirectorio', component: EPrincipalComponent},
-  {path: 'enmidirectorio/informacion/empresa/:id', component: EEmpresaInformacionComponent},
-  //Noticia
-  {path: 'noticias', component: NoticiasPrincipalComponent},
-  {path: 'noticias/informacion-noticia/:id', component: NInformacionCompletaComponent}
 ];
 
 @NgModule({

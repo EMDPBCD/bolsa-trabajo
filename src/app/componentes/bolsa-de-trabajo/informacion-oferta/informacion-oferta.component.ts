@@ -42,7 +42,7 @@ export class InformacionOfertaComponent implements OnInit {
   obtenerEmpresa(){
     this.empresa = new Array;
     let informacionEmpresa = [];
-    this.http.get<any>('http://ticketstalamas.com/hoy-en-laredo-backend/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
+    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
           Object.entries(data).forEach(
             ([key,value]) => {
               this.idOferta = key;
@@ -74,8 +74,8 @@ export class InformacionOfertaComponent implements OnInit {
           )
           console.log(this.empresa)
           //his.empresa.push(data);
-        
-    })   
+
+    })
   }
 
   enviarSolicitud(data)
@@ -89,11 +89,11 @@ export class InformacionOfertaComponent implements OnInit {
     console.log(data.correo);
     console.log(data.experiencia);
     console.log(this.idOferta);
-    
 
-  
-    this.http.post<any>('http://localhost:80/hoy-en-laredo/src/api.php/bolsa-de-trabajo/aspirantes', 
-    { 
+
+
+    this.http.post<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/aspirantes',
+    {
       id: 8,
       nombre: data.nombre,
       apellido: data.apellidos,
@@ -102,8 +102,8 @@ export class InformacionOfertaComponent implements OnInit {
       telefono: data.telefono,
       correo: data.correo,
       experiencia: data.experiencia,
-      oferta: this.idOferta 
-    }).subscribe(data => 
+      oferta: this.idOferta
+    }).subscribe(data =>
       {
         alert(data)
         if(data == "Tu solicitud ha sido enviada.")
@@ -111,8 +111,8 @@ export class InformacionOfertaComponent implements OnInit {
           window.location.reload();
         }
       })
-      
+
   }
 
-  
+
 }
