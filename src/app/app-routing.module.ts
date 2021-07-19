@@ -7,12 +7,15 @@ import { EPrincipalComponent } from './componentes/enmidirectorio/e-principal/e-
 import { EEmpresaInformacionComponent } from './componentes/enmidirectorio/e-empresa-informacion/e-empresa-informacion.component';
 import { NoticiasPrincipalComponent } from './componentes/noticias/principal/noticias.component';
 import { NInformacionCompletaComponent } from './componentes/noticias/n-informacion-completa/n-informacion-completa.component';
-
+import { CandidatoComponent } from './componentes/bolsa-de-trabajo/candidato/candidato.component'
+import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar-candidatos/listar-candidatos.component'
 
 const routes: Routes = [
   //Bolsa de trabajo
   {path: '', component: BPrincipalComponent},
   {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
+  {path: 'candidato', component: CandidatoComponent},
+  {path: 'listar-candidatos', component: ListarCandidatosComponent}
 ];
 
 @NgModule({

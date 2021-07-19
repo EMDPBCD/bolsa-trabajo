@@ -1,11 +1,11 @@
 #navbar
 {
-    background-color: #1ea6b2;
+    background-color: rgb(20, 30, 116);
 }
 
 #cabeceraTarjeta
 {
-    background-color: #1ea6b2;
+    background-color: rgb(20, 30, 116);
     color: white;
 }
 
@@ -17,9 +17,16 @@
     text-align: justify;
 }
 
+.card-header {
+    padding: .5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border: 1px solid rgb(20, 30, 116);
+}
+
 #boton
 {
-    background-color: #ef8c17;
+    background-color: rgb(20, 30, 116);
     color: white;
 }
 
@@ -34,4 +41,8 @@
     transform: translate(0px,-7px);
     transition: .3s ease-in-out;
     
+}
+
+b{
+    font-family: 'Archivo Black', sans-serif;
 }
