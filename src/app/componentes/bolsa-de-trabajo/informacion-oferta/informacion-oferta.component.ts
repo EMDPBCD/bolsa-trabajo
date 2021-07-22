@@ -92,7 +92,7 @@ export class InformacionOfertaComponent implements OnInit {
 
 
 
-    this.http.post<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/aspirantes',
+    this.http.post<any>('http://tiendatalamas.com/bolsa/  src/api.php/bolsa-de-trabajo/aspirantes',
     {
       id: 8,
       nombre: data.nombre,
