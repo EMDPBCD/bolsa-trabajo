@@ -1,0 +1,165 @@
+   <!--CONTENIDO PRINCIPAL-->
+   <div class="mt-3 mb-5" style="margin-right: 20px; margin-left: 20px;">
+    <!--ENUNCIADO-->
+<div class="row">
+<!--
+ <div class="col-lg-3 col-md-12 col-sm-12">
+   <div id="tarjetaInformacion" class="card" *ngFor="let empr of empresa">
+    <div class="card-header" id="headcard">Beneficios</div>
+
+     <div *ngFor = "let informacion of empr['beneficios']">
+       <div class="card-body">
+         <p id="puntocard1" class="card-text">{{informacion}} </p>
+        </div>
+       </div>
+     </div>
+ </div>
+-->
+ <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let informacion of aspirante" >
+     <div id="cuadroInformacion" class="container-fluid">
+      <h2 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['nombre']}}</h2>
+       <h3 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['puesto']}}</h3>
+       <h4 style="font-weight:600; font-size:medium;">Experiencia laboral</h4>
+       <h6 style="font-weight:600; font-size:medium;">{{informacion['experiencia']}}</h6>
+       <hr/>
+       <p id="Descripcion">Acerca de esta persona</p>
+         <p>{{informacion['acerca']}}
+         </p>
+
+     </div>
+ </div>
+
+ <div class="col-lg-6 col-md-12 col-sm-12">
+      <div id="tarjetaInformacion" class="card" *ngFor="let informacion of aspirante">
+            <!--
+      <div *ngIf="empresa[0]['diferencia_dias'] != '0'" class="card-header" id="headcard2" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116); font-family: 'Archivo Black', sans-serif;" id="cabeceraTarjeta" >Hace {{informacion['diferencia_dias']}} dias</div>
+        <div *ngIf="empresa[0]['diferencia_dias'] == '0'" class="card-header" id="headcard2" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">Subido Hoy</div>
+         -->
+
+        <div class="card-body">
+           <!--<p id="textocard2" class="card-text">{{empresa[0]['empresa_nombre']}}</p>-->
+           <img class="img-fluid"  style="margin: 0 auto; display: block;" src="{{informacion['foto']}}">
+        </div>
+        <div class="card-footer d-grid gap-2">
+          <!--
+         <button id="botonPostular" class="btn btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Postularme</button>
+         -->
+         <button id="botonPostular" class="btn" type="button" data-toggle="modal" data-target="#exampleModalCenter" style = "background-color: rgb(20, 30, 116); color: white">Postularme</button>
+       </div>
+      </div>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-lg-3 col-md-12 col-sm-12">
+ </div>
+
+
+<div class="col-lg-6 col-md-6 col-sm-12">
+  <!--
+ <div class="collapse" id="collapseExample">
+   <div id="cuadroFormulario">
+     <form  #formularioSolicitud = "ngForm" (ngSubmit) = "enviarSolicitud(formularioSolicitud.value)">
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput">Nombre</label>
+         <input name="nombre" type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Apellidos</label>
+         <input name="apellidos" type="text" class="form-control" id="Apellidos" placeholder="Ej: Moreno Rodriguez" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Dirección</label>
+         <input name="direccion" type="text" class="form-control" id="Direccion" placeholder="Ej: Monterrey #5435" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Formación Escolar</label>
+         <input name="formacion" type="text" class="form-control" id="Formacion" placeholder="Ej: Titulo Universitario" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Telefono</label>
+         <input name="telefono" type="text" class="form-control" id="Telefono" placeholder="Ej: 867123456" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Correo</label>
+         <input name="correo" type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com" ngModel>
+       </div>
+
+       <div class="form-group mb-3">
+         <label for="formGroupExampleInput2">Experiencia</label>
+         <input name="experiencia" type="text" class="form-control" id="Experiencia" placeholder="Ej: 5 años" ngModel>
+       </div>
+       <button  type = "submit" value = "submit" id="botonEnviar" class="btn btn">Enviar</button>
+
+     </form>
+
+   </div>
+ </div>
+--->
+</div>
+
+
+<div class="col-lg-3 col-md-12 col-sm-12">
+</div>
+</div>
+
+
+</div>
+
+
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Formulario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="overflow-y: scroll; height: 400px">
+          <form  id = "formularioSolicitud" #formularioSolicitud = "ngForm" (ngSubmit) = "enviarSolicitud(formularioSolicitud.value)">
+
+            <div class="form-group mb-3">
+              <label for="formGroupExampleInput">Empresa</label>
+              <input name="empresa" type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose" ngModel [(ngModel)]="empresa">
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="formGroupExampleInput2">Contacto con</label>
+              <input name="contacto" type="text" class="form-control" id="contacto" placeholder="Ej: Moreno Rodriguez" ngModel [(ngModel)]="contacto">
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="formGroupExampleInput3">Telefono</label>
+              <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Ej: Monterrey #5435" ngModel [(ngModel)]="telefono">
+            </div>
+            <div class="form-group mb-3">
+              <label for="formGroupExampleInput4">Correo</label>
+              <input name="correo" type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="correo">
+            </div>
+            <div class="form-group mb-3">
+              <label for="formGroupExampleInput">Direccion</label>
+              <input name="direccion" type="text" class="form-control" id="direccion" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="direccion">
+            </div>
+
+            <button type = "submit" value = "submit" id="botonEnviar" class="btn " style = "background-color: rgb(20, 30, 116); color: white">Enviar</button>
+          </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>

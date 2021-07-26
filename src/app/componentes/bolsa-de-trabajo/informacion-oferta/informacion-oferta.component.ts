@@ -45,7 +45,6 @@ export class InformacionOfertaComponent implements OnInit {
     this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/oferta/'+this.idOferta).subscribe(data => {
           Object.entries(data).forEach(
             ([key,value]) => {
-              this.idOferta = key;
               let beneficios = [];
 
               console.log(value);

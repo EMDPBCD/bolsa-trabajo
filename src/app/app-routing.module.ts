@@ -11,7 +11,7 @@ import { CandidatoComponent } from './componentes/bolsa-de-trabajo/candidato/can
 import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar-candidatos/listar-candidatos.component'
 import { AspirantesComponent} from './componentes/bolsa-de-trabajo/aspirantes/aspirantes.component';
 import { OfertasAspirantesComponent} from './componentes/bolsa-de-trabajo/ofertas-aspirantes/ofertas-aspirantes.component';
-
+import {InformacionAspirantesComponent} from './componentes/bolsa-de-trabajo/informacion-aspirantes/informacion-aspirantes.component';
 
 const routes: Routes = [
   //Bolsa de trabajo
@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'candidato', component: CandidatoComponent},
   {path: 'listar-candidatos', component: ListarCandidatosComponent},
   {path: 'registro-aspirantes', component:AspirantesComponent},
-  {path: 'ofertas-aspirantes',component:OfertasAspirantesComponent}
-
+  {path: 'ofertas-aspirantes',component:OfertasAspirantesComponent},
+  {path: 'informacion-aspirante/:aspirante', component: InformacionAspirantesComponent},
 ];
 
 @NgModule({

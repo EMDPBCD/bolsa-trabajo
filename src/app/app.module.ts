@@ -16,6 +16,7 @@ import { CandidatoComponent } from './componentes/bolsa-de-trabajo/candidato/can
 import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar-candidatos/listar-candidatos.component';
 import { AspirantesComponent } from './componentes/bolsa-de-trabajo/aspirantes/aspirantes.component';
 import { OfertasAspirantesComponent } from './componentes/bolsa-de-trabajo/ofertas-aspirantes/ofertas-aspirantes.component';
+import { InformacionAspirantesComponent } from './componentes/bolsa-de-trabajo/informacion-aspirantes/informacion-aspirantes.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OfertasAspirantesComponent } from './componentes/bolsa-de-trabajo/ofert
     ListarCandidatosComponent,
     AspirantesComponent,
     OfertasAspirantesComponent,
+    InformacionAspirantesComponent,
   ],
   imports: [
     BrowserModule,
