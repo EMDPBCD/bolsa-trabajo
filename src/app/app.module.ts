@@ -14,6 +14,8 @@ import { NoticiasPrincipalComponent } from './componentes/noticias/principal/not
 import { NInformacionCompletaComponent } from './componentes/noticias/n-informacion-completa/n-informacion-completa.component';
 import { CandidatoComponent } from './componentes/bolsa-de-trabajo/candidato/candidato.component';
 import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar-candidatos/listar-candidatos.component';
+import { AspirantesComponent } from './componentes/bolsa-de-trabajo/aspirantes/aspirantes.component';
+import { OfertasAspirantesComponent } from './componentes/bolsa-de-trabajo/ofertas-aspirantes/ofertas-aspirantes.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar
     NInformacionCompletaComponent,
     CandidatoComponent,
     ListarCandidatosComponent,
+    AspirantesComponent,
+    OfertasAspirantesComponent,
   ],
   imports: [
     BrowserModule,

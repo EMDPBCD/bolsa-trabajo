@@ -9,13 +9,19 @@ import { NoticiasPrincipalComponent } from './componentes/noticias/principal/not
 import { NInformacionCompletaComponent } from './componentes/noticias/n-informacion-completa/n-informacion-completa.component';
 import { CandidatoComponent } from './componentes/bolsa-de-trabajo/candidato/candidato.component'
 import { ListarCandidatosComponent } from './componentes/bolsa-de-trabajo/listar-candidatos/listar-candidatos.component'
+import { AspirantesComponent} from './componentes/bolsa-de-trabajo/aspirantes/aspirantes.component';
+import { OfertasAspirantesComponent} from './componentes/bolsa-de-trabajo/ofertas-aspirantes/ofertas-aspirantes.component';
+
 
 const routes: Routes = [
   //Bolsa de trabajo
   {path: '', component: BPrincipalComponent},
   {path: 'informacion-oferta/:oferta', component: InformacionOfertaComponent},
   {path: 'candidato', component: CandidatoComponent},
-  {path: 'listar-candidatos', component: ListarCandidatosComponent}
+  {path: 'listar-candidatos', component: ListarCandidatosComponent},
+  {path: 'registro-aspirantes', component:AspirantesComponent},
+  {path: 'ofertas-aspirantes',component:OfertasAspirantesComponent}
+
 ];
 
 @NgModule({

@@ -1,23 +1,50 @@
+
+ <div
+ id="sliderBPrincipal"
+ class="carousel slide"
+ data-bs-touch="false"
+ data-bs-interval="false"
+>
+
+ <button
+   class="carousel-control-prev"
+   type="button"
+   data-bs-target="#sliderBPrincipal"
+   data-bs-slide="prev"
+ >
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Previous</span>
+ </button>
+ <button
+   class="carousel-control-next"
+   type="button"
+   data-bs-target="#sliderBPrincipal"
+   data-bs-slide="next"
+ >
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Next</span>
+ </button>
+</div>
+
+
   <div class = "container mt-5">
-    <h2 class = "text-center" style = "color: rgb(20, 30, 116);"><b>Bolsa de trabajo</b></h2>
-    <p class = "text-center">
-      Consulta las ofertas de trabajo en Nuevo Laredo, Tamaulipas </p>
-      <div class="row mt-5">
+
+      <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card mb-3" >
-                  <div class="card-header text-center" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">
-                     <b>¿Como comenzar?</b>
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">Elige una categoria para buscar ofertas relacionadas</p>
-                  </div>
+            <div class="card mb-3" >
+              <div class="card-header text-center" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">
+                 <b>¿Como comenzar?</b>
               </div>
+              <div class="card-body">
+                <p class="card-text">Da click en algun aspirante y enviale un mensaje si estas interesado</p>
+              </div>
+          </div>
           </div>
 
           <div class=" col-sm-6 col-md-6 col-lg-9">
               <div class="card text-center">
                   <div class="card-header" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">
-                   <b>¿Buscas algo en especifico?</b> 
+                    <b>¿Buscas algun puesto en especifico?</b>
                   </div>
                   <div class="card-body">
                     <div class="row">
@@ -37,16 +64,19 @@
       <div class = "row">
         <div class = "col-xl-6 mt-3 mb-5" *ngFor = "let oferta of ofertas; let i = index">
           <div class="card" id="tarjeta">
-            <div id="cabeceraTarjeta" class="card-header"  style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);">
-             <b>{{oferta.empresa}}</b> 
+            <div id="cabeceraTarjeta" class="card-header" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">
+              <b>{{oferta.nombre}}</b>
             </div>
             <div class="card-body" style="height:225px;">
               <h5 class="card-title">{{oferta.puesto}}</h5>
               <p class="card-text">{{oferta.descripcion}}</p>
               <p class = "card-text">Categoria: {{oferta.categoria}} - Salario: ${{oferta.salario}}</p>
-              <a [routerLink]="['/informacion-oferta', oferta.id]" class="btn btn" id="boton">Ver más</a>
+              <a  class="btn btn" id="boton">Ver más</a>
             </div>
           </div>
         </div>
     </div>
+
+    
   </div>
+

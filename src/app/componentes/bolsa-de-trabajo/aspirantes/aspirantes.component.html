@@ -1,0 +1,69 @@
+
+<div class = "container mt-5">
+  <div class = "row">
+    <div class = "col-10 offset-1">
+<div class="card">
+  <div class="card-body">
+    <h5 class = "text-center"><b>Bolsa de trabajo</b></h5>
+    <p class = "text-center">
+      Registrate para que empresas en busca de talento puedan encontrarte.</p>
+
+    <form  id = "formularioSolicitud" #formularioSolicitud = "ngForm" (ngSubmit) = "enviarSolicitud(formularioSolicitud.value)">
+
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput">Nombre</label>
+        <input name="nombre" type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose" ngModel [(ngModel)]="nombre">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Apellidos</label>
+        <input name="apellidos" type="text" class="form-control" id="Apellidos" placeholder="Ej: Moreno Rodriguez" ngModel [(ngModel)]="apellido">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Dirección</label>
+        <input name="direccion" type="text" class="form-control" id="Direccion" placeholder="Ej: Monterrey #5435" ngModel [(ngModel)]="direccion">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Formación Escolar</label>
+        <input name="formacion" type="text" class="form-control" id="Formacion" placeholder="Ej: Titulo Universitario" ngModel [(ngModel)]="formacion">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Telefono</label>
+        <input name="telefono" type="text" class="form-control" id="Telefono" placeholder="Ej: 867123456" ngModel  [(ngModel)]="telefono">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Correo</label>
+        <input name="correo" type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="correo">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Experiencia</label>
+        <input name="experiencia" type="text" class="form-control" id="Experiencia" placeholder="Ej: 5 años" ngModel [(ngModel)]="experiencia">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Hablanos acerca de ti</label>
+        <input name="acerca" type="text" class="form-control" id="Acerca" placeholder="Ej: Soy una persona..." ngModel [(ngModel)]="acerca">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Que puesto deseas?</label>
+        <input name="puesto" type="text" class="form-control" id="Puesto" placeholder="Ej: Jefe de..." ngModel [(ngModel)]="puesto">
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="formGroupExampleInput2">Edad</label>
+        <input name="edad" type="text" class="form-control" id="Edad" placeholder="Ej: 25 años" ngModel [(ngModel)]="edad">
+      </div>
+      <button  type = "submit" value = "submit" id="botonEnviar" class="btn" style = "background-color: rgb(20, 30, 116); color: white">Enviar</button>
+    </form>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>

@@ -4,22 +4,25 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <b>Aspirantes</b>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" [routerLink]="['ofertas-aspirantes']">Lista de aspirantes</a>
+        <a class="dropdown-item"  [routerLink]="['registro-aspirantes']">Registrarse como aspirante</a>
+        <div class="dropdown-divider"></div>
+      </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
-  </li>
       <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7e1b7c92-7cec-4589-8d0f-fff59e0a71f4/LOGO%20HORIZONTAL.png/:/rs=w:222,h:51,cg:true,m/cr=w:222,h:51/qt=q:95"></a>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/candidato']" >Empleado</a>
+        <a class="nav-link" [routerLink]="['']" >Inicio</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Empleador</a>
-  </li>
     </ul>
   </div>
 </nav>
+
+
 
 <router-outlet></router-outlet>
 

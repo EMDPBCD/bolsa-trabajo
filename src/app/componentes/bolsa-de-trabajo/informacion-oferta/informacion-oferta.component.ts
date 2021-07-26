@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InformacionOfertaComponent implements OnInit {
 
-  constructor(private _route:ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: Router, private _route:ActivatedRoute, private http: HttpClient) { }
 
   idOferta:string;
   empresa:any;
@@ -92,7 +92,7 @@ export class InformacionOfertaComponent implements OnInit {
 
 
 
-    this.http.post<any>('http://tiendatalamas.com/bolsa/  src/api.php/bolsa-de-trabajo/aspirantes',
+    this.http.post<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/aspirantes',
     {
       id: 8,
       nombre: data.nombre,
@@ -106,8 +106,9 @@ export class InformacionOfertaComponent implements OnInit {
     }).subscribe(data =>
       {
         alert(data)
-        if(data == "Tu solicitud ha sido enviada.")
+        if(data == "Gracias, tu solicitud ha sido enviada.")
         {
+          this.router.navigate([''])
           window.location.reload();
         }
       })
