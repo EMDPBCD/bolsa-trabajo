@@ -53,7 +53,7 @@ export class InformacionAspirantesComponent implements OnInit {
                   correo: value["correo"],
                   experiencia: value["experiencia"],
                   acerca: value["acerca"],
-                  edad: value["edad "],
+                  edad: value["edad"],
                   foto: value["foto"]
               })
             }

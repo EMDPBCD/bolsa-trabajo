@@ -20,7 +20,7 @@
       <h2 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['nombre']}}</h2>
        <h3 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['puesto']}}</h3>
        <h4 style="font-weight:600; font-size:medium;">Experiencia laboral</h4>
-       <h6 style="font-weight:600; font-size:medium;">{{informacion['experiencia']}}</h6>
+       <h6 style="font-weight:600; font-size:medium; ">{{informacion['experiencia']}}</h6>
        <hr/>
        <p id="Descripcion">Acerca de esta persona</p>
          <p>{{informacion['acerca']}}
@@ -44,6 +44,12 @@
           <!--
          <button id="botonPostular" class="btn btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Postularme</button>
          -->
+
+         <h3 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['nombre']}}</h3>
+         <h5 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">Edad: {{informacion['edad']}}</h5>
+         <h5 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">Formacion acedemica: </h5>
+         <h5 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;"> {{informacion['formacion']}}</h5>
+
          <button id="botonPostular" class="btn" type="button" data-toggle="modal" data-target="#exampleModalCenter" style = "background-color: rgb(20, 30, 116); color: white">Postularme</button>
        </div>
       </div>
@@ -133,17 +139,17 @@
 
             <div class="form-group mb-3">
               <label for="formGroupExampleInput">Empresa</label>
-              <input name="empresa" type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose" ngModel [(ngModel)]="empresa">
+            <input name="empresa" type="text" class="form-control" id="Nombre" placeholder="Ej: Empresa ..." ngModel [(ngModel)]="empresa">
             </div>
 
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Contacto con</label>
-              <input name="contacto" type="text" class="form-control" id="contacto" placeholder="Ej: Moreno Rodriguez" ngModel [(ngModel)]="contacto">
+              <input name="contacto" type="text" class="form-control" id="contacto" placeholder="Ej: Juan Rodriguez" ngModel [(ngModel)]="contacto">
             </div>
 
             <div class="form-group mb-3">
               <label for="formGroupExampleInput3">Telefono</label>
-              <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Ej: Monterrey #5435" ngModel [(ngModel)]="telefono">
+              <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Ej: 8671234567" ngModel [(ngModel)]="telefono">
             </div>
             <div class="form-group mb-3">
               <label for="formGroupExampleInput4">Correo</label>
@@ -151,7 +157,7 @@
             </div>
             <div class="form-group mb-3">
               <label for="formGroupExampleInput">Direccion</label>
-              <input name="direccion" type="text" class="form-control" id="direccion" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="direccion">
+              <input name="direccion" type="text" class="form-control" id="direccion" placeholder="Ej: Monterrey #123" ngModel [(ngModel)]="direccion">
             </div>
 
             <button type = "submit" value = "submit" id="botonEnviar" class="btn " style = "background-color: rgb(20, 30, 116); color: white">Enviar</button>

@@ -67,10 +67,11 @@
             <div id="cabeceraTarjeta" class="card-header" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">
               <b>{{oferta.nombre}}</b>
             </div>
-            <div class="card-body" style="height:225px;">
+            <div class="card-body" style="height:auto;">
               <h5 class="card-title">{{oferta.puesto}}</h5>
               <p class="card-text">{{oferta.acerca}}</p>
-              <p class = "card-text">Experiencia: {{oferta.experiencia}} - Edad: {{oferta.edad}}</p>
+              <p class = "card-text" style="overflow: hidden; width: 100%; white-space:nowrap; text-overflow: ellipsis;">Experiencia: {{oferta.experiencia}}</p>
+              <p class = "card-text" style="overflow: hidden; width: 100%; white-space:nowrap; text-overflow: ellipsis;">Edad: {{oferta.edad}}</p>
               <a [routerLink]="['/informacion-aspirante', oferta.id]" class="btn btn" id="boton">Ver más</a>
             </div>
           </div>

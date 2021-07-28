@@ -3,7 +3,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="{{informacion['imagen_uno']}}" style = "height: 500px;" class="d-block w-100" alt="...">
-    </div> 
+    </div>
       <div class="carousel-item">
         <img src="{{informacion['imagen_dos']}}" class="d-block w-100" alt="...">
     </div>
@@ -41,7 +41,7 @@
  <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let informacion of empresa" >
      <div id="cuadroInformacion" class="container-fluid">
        <h2 style="font-weight:700; font-family: 'Archivo Black', sans-serif; color: rgb(20, 30, 116);;">{{informacion['puesto']}}</h2>
-       <h5 style="font-weight:600; font-size: small;">$3000 semanal</h5>
+       <h5 style="font-weight:600; font-size: small;">${{informacion['salario']}} semanal</h5>
        <h5 style="font-weight:600; font-size:medium;">{{informacion['empresa_direccion']}}</h5>
        <hr/>
        <p id="Descripcion">Descripción</p>
@@ -57,7 +57,7 @@
       <div id="tarjetaInformacion" class="card" *ngFor="let informacion of empresa">
         <div *ngIf="empresa[0]['diferencia_dias'] != '0'" class="card-header" id="headcard2" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116); font-family: 'Archivo Black', sans-serif;" id="cabeceraTarjeta" >Hace {{informacion['diferencia_dias']}} dias</div>
         <div *ngIf="empresa[0]['diferencia_dias'] == '0'" class="card-header" id="headcard2" style = "color: rgb(20, 30, 116); background-color: white; border-color: rgb(20, 30, 116);" id="cabeceraTarjeta">Subido Hoy</div>
-        
+
         <div class="card-body">
            <!--<p id="textocard2" class="card-text">{{empresa[0]['empresa_nombre']}}</p>-->
            <img class="img-fluid"  style="margin: 0 auto; display: block;" src="{{informacion['empresa_logo']}}">
@@ -152,37 +152,37 @@
         <div class="modal-body">
           <div style="overflow-y: scroll; height: 400px">
           <form  id = "formularioSolicitud" #formularioSolicitud = "ngForm" (ngSubmit) = "enviarSolicitud(formularioSolicitud.value)">
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput">Nombre</label>
               <input name="nombre" type="text" class="form-control" id="Nombre" placeholder="Ej: Juan Jose" ngModel [(ngModel)]="nombre">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Apellidos</label>
               <input name="apellidos" type="text" class="form-control" id="Apellidos" placeholder="Ej: Moreno Rodriguez" ngModel [(ngModel)]="apellido">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Dirección</label>
               <input name="direccion" type="text" class="form-control" id="Direccion" placeholder="Ej: Monterrey #5435" ngModel [(ngModel)]="direccion">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Formación Escolar</label>
               <input name="formacion" type="text" class="form-control" id="Formacion" placeholder="Ej: Titulo Universitario" ngModel [(ngModel)]="formacion">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Telefono</label>
               <input name="telefono" type="text" class="form-control" id="Telefono" placeholder="Ej: 867123456" ngModel  [(ngModel)]="telefono">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Correo</label>
-              <input name="correo" type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="correo"> 
+              <input name="correo" type="text" class="form-control" id="Correo" placeholder="Ej: trabajo@gmail.com" ngModel [(ngModel)]="correo">
             </div>
-  
+
             <div class="form-group mb-3">
               <label for="formGroupExampleInput2">Experiencia</label>
               <input name="experiencia" type="text" class="form-control" id="Experiencia" placeholder="Ej: 5 años" ngModel [(ngModel)]="experiencia">

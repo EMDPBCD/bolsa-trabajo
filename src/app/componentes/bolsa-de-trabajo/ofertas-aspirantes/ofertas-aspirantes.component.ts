@@ -44,7 +44,7 @@ export class OfertasAspirantesComponent implements OnInit {
   {
     console.log(this.categoriaSeleccionada);
     this.ofertas = new Array;
-    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/ofertas/' + 1).subscribe(data => {
+    this.http.get<any>('http://tiendatalamas.com/bolsa/src/api.php/bolsa-de-trabajo/ofertas-aspirantes/' + this.categoriaSeleccionada).subscribe(data => {
         for(let i = 0; i < data.length; i++)
         {
           this.ofertas.push(data[i]);
